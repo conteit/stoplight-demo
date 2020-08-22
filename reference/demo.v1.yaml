@@ -25,9 +25,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties: {}
-              examples: {}
+                $ref: '#/components/schemas/Person'
       operationId: get-people-id
     post:
       summary: createNew
@@ -35,35 +33,69 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
       operationId: post-people-id
       requestBody:
         content:
           application/json:
             schema:
-              type: object
-              properties: {}
+              $ref: '#/components/schemas/Person'
     put:
       summary: replace
       tags: []
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
       operationId: put-people-id
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Person'
     patch:
       summary: edit
       tags: []
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
       operationId: patch-people-id
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Person'
     delete:
       summary: deleteById
       tags: []
-      responses: {}
+      responses:
+        '204':
+          description: No Content
       operationId: delete-people-id
 components:
   schemas:
     Person:
       title: Person
       type: object
+      description: ''
       properties:
         id:
           type: string
+        name:
+          type: string
+        surname:
+          type: string
+        age:
+          type: integer
   securitySchemes: {}
 security: []
