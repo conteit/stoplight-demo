@@ -1,0 +1,12 @@
+title: person
+type: object
+x-examples: {}
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  surname:
+    type: string
+  age:
+    type: integer
